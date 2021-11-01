@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Channel index{% endblock %}
+
+{% block body %}
+    <h1>Channel index</h1>
+
+    <div class="row row-cols-1 row-cols-md-6 g-4">
+        {% for channel in channels %}
+            <div class="col">
+                <div class="card">
+                    <img src="{{ channel.image }}" class="card-img-top" alt="{{ channel.title }} thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ channel.title }}</h5>
+                        <p class="card-text">{{ channel.description|u.truncate(50, '...', false) }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+
+
+{% endblock %}

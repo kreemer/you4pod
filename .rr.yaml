@@ -1,0 +1,13 @@
+server:
+  command: "php public/index.php"
+  env:
+    APP_RUNTIME: Runtime\RoadRunnerSymfonyNyholm\Runtime
+
+http:
+  pool:
+    num_workers: 4
+  address: 0.0.0.0:80
+  middleware: [ "static", "gzip" ]
+  static:
+    dir: "public"
+    forbid: [ ".php", ".htaccess" ]

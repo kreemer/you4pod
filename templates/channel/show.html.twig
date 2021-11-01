@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Channel{% endblock %}
+
+{% block body %}
+    <h1>Channel</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ channel.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ channel.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ channel.description }}</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>{{ channel.summary }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ channel.link }}</td>
+            </tr>
+            <tr>
+                <th>Ttl</th>
+                <td>{{ channel.ttl }}</td>
+            </tr>
+            <tr>
+                <th>LastBuildDate</th>
+                <td>{{ channel.lastBuildDate ? channel.lastBuildDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ channel.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('channel_index') }}">back to list</a>
+{% endblock %}
